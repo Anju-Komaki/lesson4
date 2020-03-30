@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   get 'todolists' => 'todolists#index'
   get 'todolists/:id' => 'todolists#show', as: 'todolist'
+  get 'todolists/:id/edit' => 'todolist#edit' , as: 'edit_todolist'
 end
