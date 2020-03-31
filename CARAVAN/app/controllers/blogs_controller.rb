@@ -25,6 +25,9 @@ class BlogsController < ApplicationController
   	blog.update(blog_params)
   	redirect_to blogs_path(blog)
   end
+  def destory
+  	
+  end
   private
   def blog_params
   	params.require(:blog).permit(:title, :category, :body)
