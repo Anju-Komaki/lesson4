@@ -1,12 +1,11 @@
 class BooksController < ApplicationController
- def top
- end
-  def list
-  	@books = Book.all
-  	@book = Book.new
+  def index
   end
 
   def show
+  end
+
+  def new
   end
 
   def edit
