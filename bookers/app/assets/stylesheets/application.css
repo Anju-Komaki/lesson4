@@ -38,3 +38,11 @@ a:hover {
 p {
 	margin: 33px;
 }
+
+div.field, div.acitons {
+	margin-bottom: 10px;
+}
+
+div {
+	display: block;
+}
