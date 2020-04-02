@@ -7,14 +7,14 @@ class BooksController < ApplicationController
   end
 
   def new
-    @books = Book.all
+    @books = Book.all.order(created_at: :desc)
   	@book = Book.new
   end
 
   def create
   	book = Book.new(book_params)
   	book.save
-    redirect_to book_path
+    redirect_to new_book_path, notice: "Book was successfully created"
   end
 
   def edit
@@ -22,13 +22,17 @@ class BooksController < ApplicationController
   end
   def update
     book = Book.find(params[:id])
-    book.update(book_params)
-    redirect_to book_path
+    if book.update(book_params)
+       flash[:message] = "Book was successfully updated"
+       redirect_to book_path
+    else
+      render :new
+    end
   end
   def destroy
     book = Book.find(params[:id])
     book.destroy
-    redirect_to new_book_path, notice: "Book was successfully destoyed."
+    redirect_to new_book_path, alert: "Book was successfully destoyed."
   end
 
   private

@@ -46,3 +46,7 @@ div.field, div.acitons {
 div {
 	display: block;
 }
+
+.message {
+	color: #17807a;
+}
