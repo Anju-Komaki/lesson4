@@ -1,4 +1,4 @@
-# lesson3
+# lesson4
 
-# DMM WEBCAMPコンテンツ【Railsを学ぼう】
-DMM WEBCAMPの学習コンテンツRailsを学ぼうの演習問題です。
+# DMM WEBCAMPコンテンツ【アプリケーションを完成させよう】
+DMM WEBCAMPの学習コンテンツの演習問題です。
