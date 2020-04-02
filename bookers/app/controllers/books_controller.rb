@@ -25,11 +25,12 @@ class BooksController < ApplicationController
     book.update(book_params)
     redirect_to book_path(book.id)
   end
-  def destory
+  def destroy
     book = Book.find(params[:id])
-    book.destory
-    redirect_to book_path(book.id)
+    book.destroy
+    redirect_to new_book_path
   end
+
   private
   def book_params
   	params.require(:book).permit(:title, :body)
