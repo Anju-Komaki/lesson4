@@ -25,6 +25,7 @@ body {
 a {
   text-decoration: underline;
   cursor: pointer;
+  color: black;
 }
 
 a:visited {
@@ -48,5 +49,6 @@ div {
 }
 
 .message {
-	color: #17807a;
+	color: green;
 }
+
