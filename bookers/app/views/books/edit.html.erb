@@ -1,5 +1,5 @@
 <h1>Editing Book</h1>
-	<%= form_for(@book) do |f| %>
+	<%= form_for (@book) do |f| %>
 		<div class="field">
 			<%= f.label :title, "Title" %><br>
 			<%= f.text_field :title %>
@@ -12,4 +12,4 @@
 			<%= f.submit 'Update Book' %>
 		</div>
 	<% end %>
-<%= link_to "show", book_path %>|<%= link_to "back", new_book_path %>
+<%= link_to "Show", show_book_path %>|<%= link_to "Back", books_path %>
