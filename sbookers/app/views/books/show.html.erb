@@ -10,7 +10,7 @@
 			<tr>
 				<td><%= @book.title %></td>
 				<td><%= @book.opinion %></td>
-				<td><a>Edit</a></td>
+				<td><%= link_to "Edit", edit_book_path(@book) %></td>
 				<td><a>destroy</a></td>
 			</tr>
 	</tbody>
