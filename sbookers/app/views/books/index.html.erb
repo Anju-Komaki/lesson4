@@ -14,7 +14,7 @@
 					<%= book.title %>
 					<% end %>
 				</td>
-				<td><%= book.opinion %></td>
+				<td><%= book.body %></td>
 			</tr>
 		<% end %>
 	</tbody>
@@ -35,7 +35,7 @@
 	<label class="title">Title</label><br>
 	<%= f.text_field :title %><br>
 	<label class="title">opinion</label><br>
-	<%= f.text_area :opinion %><br>
+	<%= f.text_area :body %><br>
 	<%= f.submit 'Create Book' %>
 
 <% end %>
