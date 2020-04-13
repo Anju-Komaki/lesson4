@@ -1,3 +1,21 @@
+<h2>User info</h2>
+	    	<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img" %><br>
+	    	<table class="table">
+	    		<tbody>
+	    			<tr>
+	    				<th>name</th>
+	    				<th><%= @user.name %></th>
+	    			</tr>
+	    			<tr>
+	    				<th>introduction</th>
+	    				<th><%= @user.introduction %></th>
+	    			</tr>
+				</tbody>
+		    </table>
+			<% if @user.id == current_user.id %>
+			<p><%= link_to "edit profile", edit_user_path(@user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %></p>
+			<% end %>
+
 <div class="col-xs-9">
 	<h2>Users</h2>
 		<table class="table">
