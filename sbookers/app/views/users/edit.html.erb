@@ -18,6 +18,8 @@
                                  <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"名前"%><br>
                                  <label>Image</label><br>
                                  <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+                                 <label>Introduction</label><br>
+                                 <%= f.text_area :introduction %>
                                </div>
                                <%= f.submit "Update User" %>
                                <% end %>
