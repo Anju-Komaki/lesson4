@@ -1,36 +1,32 @@
-<div class="body-wrap">
-  <div id="st-container" class="st-container">
-    <div class="st-pusher">
-      <div class="st-content">
-        <div class="st-content-inner">
-          <section class="slice slice-lg sct-color-1">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-md-4 col-md-offset-4">
-                          <div class="form-user style-1 rounded has-shadow-1">
-                            <div class="form-header text-center">
-                                <h2 class="form-header-title">User info</h2>
-                            </div>
-                            <div class="form-body">
-                              <%= form_for(@user) do |f| %>
-                               <div class="form-group has-icon">
-                                 <label class="profile-name">Name</label>
-                                 <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"名前"%><br>
-                                 <label>Image</label><br>
-                                 <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
-                                 <label>Introduction</label><br>
-                                 <%= f.text_area :introduction %>
-                               </div>
-                               <%= f.submit "Update User" %>
-                               <% end %>
-                            </div>
-                          </div> 
-                      </div>
-                  </div>
-              </div>
-          </section>
-        </div>
-      </div>
+<div class="container">
+  <h2>User info</h2>
+     <% if @user.errors.any? %>
+      <div class="error_explanation">
+       <h2><%= @user.errors.count %>error prohibited this obj from being saved:</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+   </div>
+  <% end %>
+   <div class="form-body">
+   <%= form_for(@user) do |f| %>
+    <div class="field">
+     <label class="user_name">Name</label>
+     <%= f.text_field :name %>
+    </div><br>
+    <div class="field">
+     <label class="user_image">Image</label><br>
+     <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
     </div>
+    <div class="field">
+     <label class="user_introduction">Introduction</label><br>
+     <%= f.text_area :introduction %>
+    </div>
+    <div class="actions">
+     <%= f.submit "Update User" %>
+    </div>
+    <% end %>
   </div>
 </div>

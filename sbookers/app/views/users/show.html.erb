@@ -1,8 +1,14 @@
-<h2>User info</h2>
-<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img" %><br>
-<table class="table">
-<tbody>
-	 <tr>
+<div class="container">
+<% if flash[:update]%>
+<div class="message"><%= flash[:update] %></div>
+<% end %>
+ <div class="row">
+ 	<div class="col-xs-3">
+		<h2>User info</h2>
+			<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img" %><br>
+		<table class="table">
+		<tbody>
+	 	<tr>
 	    <th>name</th>
 	    <th><%= @user.name %></th>
 	    </tr>
@@ -10,14 +16,15 @@
 	    <th>introduction</th>
 	    <th><%= @user.introduction %></th>
 	    </tr>
-</tbody>
-</table>
-<% if @user.id == current_user.id %>
-<p><%= link_to "edit profile", edit_user_path(@user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %></p>
-<% end %>
-<div class="col-xs-9">
-<h1>Books</h1>
-<table class="table table-hover table-inverse">
+		</tbody>
+		</table>
+		<% if @user.id == current_user.id %>
+		<p><%= link_to "edit profile", edit_user_path(@user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %></p>
+		<% end %>
+	</div>
+	<div class="col-xs-9">
+	<h1>Books</h1>
+	<table class="table table-hover table-inverse">
 	<thead>
 		<tr>
 			<th>Title</th>
@@ -36,5 +43,7 @@
 			</tr>
 		<% end %>
 	</tbody>
-</table>
+	</table>
+	</div>
+  </div>
 </div>

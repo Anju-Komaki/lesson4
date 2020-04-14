@@ -1,4 +1,7 @@
-<h2>User info</h2>
+<div class="container">
+ <div class="row">
+ 	<div class="col-xs-3">
+      <h2>User info</h2>
 	    	<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img" %><br>
 	    	<table class="table">
 	    		<tbody>
@@ -15,7 +18,7 @@
 			<% if @user.id == current_user.id %>
 			<p><%= link_to "edit profile", edit_user_path(@user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %></p>
 			<% end %>
-
+		</div>
 <div class="col-xs-9">
 	<h2>Users</h2>
 		<table class="table">
@@ -35,5 +38,7 @@
 				<% end %></td>
 				</tr>
 			</tbody>
-			</table>
+  			</table>
+  </div>
+ </div>
 </div>
