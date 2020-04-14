@@ -1,4 +1,10 @@
 <div class="container">
+	<% if flash[:success]%>
+    <div class="message"><%= flash[:success] %></div>
+    <% end %>
+    <% if flash[:message]%>
+    <div class="message"><%= flash[:message] %></div>
+    <% end %>
 	<div class="row">
 		<div class="col-xs-3">
 			<h2>New book</h2>
