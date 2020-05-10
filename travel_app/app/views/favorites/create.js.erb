@@ -1,0 +1,2 @@
+// #likes_buttons_<%= @travel_image.id %>この部分のHTMLだけ、renderで部分的に更新するという処理です
+$('#likes_buttons_<%= @travel_image.id %>').html("<%= j(render partial: 'favorites/favorite', locals: {travel_image: @travel_image}) %>");

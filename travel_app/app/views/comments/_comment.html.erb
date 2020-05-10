@@ -1,0 +1,16 @@
+<h4><span class="glyphicon glyphicon-user"></span>Comments</h4>
+<% @travel_image.comments.each do |comment| %>
+	<div id="travel_image_comment-<%= comment.id %>">
+		<dl>
+		<dt><%= link_to user_path(comment.user), class: "user_#{comment.user.id}" do %>
+			<%= comment.user.name %>
+        <% end %> <%= comment.created_at.strftime('%Y/%m/%d') %></dt>
+	    <dd>- <%= comment.comment %></dd>
+	     <% unless current_user != comment.user %>
+        <%= link_to travel_image_comments_path(comment.id), method: :delete, remote: true, data: {confirm: '本当に消しますか?' } do  %>
+	    <i class="fas fa-trash-alt"></i>
+	    <% end %>
+    <% end %>
+<% end %>
+</dl>
+</div>

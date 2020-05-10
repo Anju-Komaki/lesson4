@@ -1,0 +1,3 @@
+$("textarea").val("");
+$(".travel_image_<%= @travel_image.id %>").html("<%= j(render 'travel_images/show', travel_image: @travel_image ) %>");
+$(".comment_<%= @travel_image.id %>").html("<%= j(render 'comments/comment', comments: @travel_image_comments ) %>");

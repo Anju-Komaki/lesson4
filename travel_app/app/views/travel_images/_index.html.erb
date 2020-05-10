@@ -1,0 +1,11 @@
+ 	<% travel_images.each do |travel_image| %>
+ 	<%= attachment_image_tag travel_image.user, :profile_image, :fill, 5, 5, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+ 	<p><%= travel_image.user.name %></p>
+ 	<p><%= travel_image.created_at.strftime('%Y/%m/%d') %></p>
+ 	<%= link_to travel_image_path(travel_image.id) do %>
+ 	<%= attachment_image_tag travel_image, :image, :fill, 300, 300 %>
+ 	<% end %>
+ 	<p><%= travel_image.caption %></p>
+ 	<p><i class="far fa-comment"></i><%= link_to "#{travel_image.comments.count}", travel_image_path(travel_image.id) %>
+ 	<i class="fas fa-thumbs-up"></i><%= travel_image.favorites.count %></p>
+ 	<% end %>

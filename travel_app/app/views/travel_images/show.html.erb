@@ -1,0 +1,19 @@
+<br>
+<div class="row">
+	<div class="col-xs-3">
+		<%= render 'users/profile', user: @user %>
+	</div>
+	<div class="col-xs-9">
+	<!--show image-->
+	<%= render 'travel_images/show', travel_image: @travel_image %>
+    <br>
+    <!--show comment-->
+    <div class="show-tb comment_<%= @travel_image.id %>">
+     <%= render 'comments/comment', comments: @travel_image_comments %>
+    </div>
+	<%= form_with model:[@travel_image, @comment], data: {remote: true} do |f| %>
+	<%= f.text_area :comment, row:'5', class: "form-control", placeholder: "コメントをここに" %>
+	<%= f.submit "送信", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+	<% end %>
+</div>
+</div>
